@@ -4,27 +4,50 @@
     <link rel = "stylesheet" href = "planner.css">
     <link href='https://fonts.googleapis.com/css?family=Red Hat Display' rel='stylesheet'>
 </head>
-<script src = "combinedCalender.js"></script>
+<script src = "combinedCalendar.js"></script>
+
 <body>
     <h1 class = "headers">COMBINED CALENDAR</h1>
-    <button class = "buttonHome" onclick = "test2()" style = "position:absolute; left:1370px; bottom: 20px; width:9%; font-size: 20px;" id = "home">HOME</button>
     <div class = "viewBox">
         <p style = "color: #FFFA9D; position:relative; left: 23px; top: 20px; font-size:26px">View</p>
         <table style = "background-color: aliceblue; position: absolute; top: 60px; left:20px; width: 260px; height: 120px; border-radius: 5px;">
             <tr>
-                <td onclick = "test2()" style = "position:relative; left: 3px; font-size: 18px;">Class Schedule</td>
+                <td id = "classSchedule" onclick = "highlight(this)" style = "font-size: 18px; padding-left: 5px;">Class Schedule</td>
             </tr>
             <tr>
-                <td onclick = "test2()" style = "position:relative; left: 3px; font-size: 18px">Assignments</td>
+                <td id = "assignments" onclick = "highlight(this)" style = "font-size: 18px; padding-left: 5px;">Assignments</td>
             </tr>
             <tr>
-                <td onclick = "test2()" style = "position:relative; left: 3px; font-size: 18px">Personal</td>
+                <td id = "personal" onclick = "highlight(this)" style = "font-size: 18px; padding-left: 5px;">Personal Planner</td>
             </tr>
             <tr> 
-                <td onclick = "test2()" style = "position:relative; left: 3px; font-size: 18px">To-Do</td>
+                <td id = "todo" onclick = "highlight(this)" style = "font-size: 18px; padding-left: 5px;">To-Do</td>
             </tr>
         </table>
     </div>
+
+    <div class = "detailsBox">
+        <p style = "color: #FFFA9D; position:relative; left: 23px; top: 20px; font-size:26px">Details</p>
+        <table style = "background-color:#070032; position: absolute; top: 50px; left:20px; width: 360px; border-radius: 5px; border-collapse: separate; border-spacing: 0 12px;">
+            <tr>
+                <td  class = "detailsData">Calendar: </td>
+            </tr>
+            <tr>
+                <td class = "detailsData">Title:</td>
+            </tr>
+            <tr>
+                <td class = "detailsData">Class:</td>
+            </tr>
+            <tr> 
+                <td class = "detailsData">Type: </td>
+            </tr>
+            <tr> 
+                <td class = "detailsData" style = "padding-bottom: 110px;">Notes: </td>
+            </tr>
+        </table>
+    </div>
+
+    <button class = "buttonHome" onclick = "goHome()" style = "position:absolute; left:1370px; bottom: 10px; width:9%; font-size: 20px;" id = "home">HOME</button>
 
 </body>
 </html>

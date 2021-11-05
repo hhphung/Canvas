@@ -45,6 +45,28 @@ html *
     background-color: #070032;
     position: relative;
     left: 10px;
-    top: 380px;
+    top: 0px;
     border-radius: 5px;
+}
+
+.detailsBox
+{
+    width: 400px;
+    height: 400px;
+    background-color: #070032;
+    position: relative;
+    left: 10px;
+    bottom: 20px;
+    border-radius: 5px;
+}
+
+.detailsData
+{
+    position: relative;
+    font-size: 18px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
 }
