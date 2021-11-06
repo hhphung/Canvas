@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="personalPlanner.css">
+ 
+
+</head>
+<body>
+<div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
+  
+    <div class="card">
+        
+      <i> <button class="arrow left" id="previous" onclick="previous()"></button></i> 
+        <i class="card-header" id="monthAndYear"></i>
+      <i> <button class="arrow right" id="next" onclick="next()"></button></i> 
+        <table class="table table-bordered table-responsive-sm" id="calendar">
+            <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+            </thead>
+
+            <tbody id="calendar-body">
+
+            </tbody>
+        </table>
+
+    
+        <br/>
+        <form class="form-inline">
+            <label for="month" id ="month">
+            <label for="year" id ="year">
+    </div>
+</div>
+<!--<button name="jump" onclick="jump()">Go</button>-->
+<script src="personalPlanner.js"></script>
+
+
+
+
+</body>
+</html>
