@@ -1,0 +1,78 @@
+body 
+{
+    background: linear-gradient(to bottom,  rgba(3,0,196,1) 0%,rgba(0,157,255,1) 50%,rgba(3,0,196,1) 100%);
+}
+
+html *
+{
+    font-family: "Red Hat Display";
+}
+
+.container {
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.td{
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar{
+    
+    width: 100%;
+    background-color: #082b775c;
+    padding: 10 px;
+}
+
+.card{
+    display: inline-block;
+    background-color: #070032;
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px;
+}
+
+.card-header{
+    color: aliceblue;
+    font-size: 15px;
+    text-align: center;
+    font-family : Arial;
+    padding-left: 133px;
+    padding-right: 133px;
+}
+
+.arrow {
+    background-color: #FFFA9D;
+    border: solid #070032;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 4px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+  .weekDays
+  {
+      color: aliceblue;
+      font-size: 12px;
+      padding: 13px;
+      text-align: center;
+  }
+
