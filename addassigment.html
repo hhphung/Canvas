@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="planner.css">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Display' rel='stylesheet'>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        tr:nth-child(odd) {
+            background-color: #c3c3c3;
+        }
+        tr:nth-child(even) {
+            background-color: #FFFA9D;
+        }
+        input[type="radio"] {
+             margin: -1px;
+             vertical-align: middle;
+        }
+        .tab {
+            display: inline-block;
+            margin-left: 40px;
+        }
+    </style>
+    <script src="addassignment.js"></script>
+</head>
+
+<body>
+    <h1 class="headers">ADD ASSIGNMENT</h1>
+
+    <div class="assignmentBox">
+        <p style=" color: #000000; position: relative; left: 23px; top: 20px; font-size: 26px"></p>
+        <table style="background-color:#070032; position: absolute; top: 20px; left:20px; width: 360px; border-radius: 5px; border-collapse: separate; border-spacing: 0px;">
+            <tr>
+                <th> </th>
+                <th> </th>
+            </tr>
+            <tr>
+                <td><label for="class">Select Class:</label></td>
+                <td>
+                    <select name="class" id="class" align="right">
+                        <option value="coms327">COM S 327</option>
+                        <option value="coms319">COM S 319</option>
+                        <option value="coms311">COM S 311</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="name">Assignment Name:</label></td>
+                <td><input type="text" id="name" name="name" value=""></td>
+            </tr>
+            <tr>
+                <td><label for="type">Assignment Type:</label></td>
+                <td>
+                    <input type="radio" id="test" name="test" value="test">
+                    <label for="test">Test&nbsp;&nbsp;<span class="tab"></span><span class="tab"></span></label>
+                    <input type="radio" id="project" name="project" value="project">
+                    <label for="project">Project</label>
+                </td>
+            </tr>
+            <tr style="background-color: #FFFA9D">
+                <td></td>
+                <td>
+                    <input type="radio" id="quiz" name="quiz" value="quiz">
+                    <label for="quiz">Quiz&nbsp;<span class="tab"></span><span class="tab"></span></label>
+                    <input type="radio" id="paper" name="paper" value="paper">
+                    <label for="paper">Paper</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="radio" id="worksheet" name="worksheet" value="worksheet">
+                    <label for="worksheet">Worksheet<span class="tab"></span></label>
+                    <input type="radio" id="lab" name="lab" value="lab">
+                    <label for="lab">Lab</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="date">Due Date:</label></td>
+                <td><input type="date" id="date" name="date" value="" min="2021-08-01" max="2022-05-13"></td>
+            </tr>
+            <tr>
+                <td><label for="time">Time Due:</label></td>
+                <td><input type="time" id="time" name="time" value="" min="0:00" max="24:00"></td>
+            </tr>
+            <tr>
+                <td><label for="daysneeded">Days Needed:</label></td>
+                <td><input type="number" id="daysneeded" name="daysneeded" value=""></td>
+            </tr>
+            <tr>
+                <td><label for="hoursneeded">Hours Needed:</label></td>
+                <td><input type="number" id="hoursneeded" name="hoursneeded" value=""></td>
+            </tr>
+            <tr>
+                <td><label for="description">Description:</label></td>
+                <td><textarea id="description" name="description" rows="4" cols="30"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="subtasks">Subtasks:</label></td>
+                <td><input type="text" id="subtasks" name="subtasks"><button type="button">+</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <button class="buttonHome" onclick="addassignment()" style="position:absolute; left:23px; bottom: 150px; width:9%; font-size: 20px;" id="home">Add Assignment</button>
+    <button class="buttonHome" onclick="history.back()" style="position:absolute; left:1370px; bottom: 100px; width:9%; font-size: 20px;" id="home">RETURN</button>
+    <button class="buttonHome" onclick="goHome()" style="position:absolute; left:1370px; bottom: 10px; width:9%; font-size: 20px;" id="home">HOME</button>
+
+</body>
+</html>
