@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+body 
+{
+    background: linear-gradient(to bottom,  rgba(3,0,196,1) 0%,rgba(0,157,255,1) 50%,rgba(3,0,196,1) 100%);
+}
+
+html *
+{
+    font-family: "Red Hat Display";
+}
 
 .container {
     display: inline-block;
-    border : 2px solid #000000;
     position: relative;
     width: 400px;
     min-height: 400px;
-    background: rgba(255,255,255,0.1);
-    box-shadow:0 25px 45px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255,255,255,0.5);
-    border-right: 1px solid rgba(255,255,255,0.2);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(25px);
-    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,8 +20,6 @@
 
 
 .td{
-    padding : 5px;
-    color:#fff;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -30,29 +28,34 @@
 .calendar{
     
     width: 100%;
-    padding: px;
+    background-color: #082b775c;
+    padding: 10 px;
 }
 
 .card{
     display: inline-block;
-    border : 1px solid #000000;
+    background-color: #070032;
+    border-radius: 5px;
     width: 100%;
     padding: 20px;
 }
 
 .card-header{
-    padding : 60px;
-    text-align : center;
+    color: aliceblue;
+    font-size: 15px;
+    text-align: center;
     font-family : Arial;
+    padding-left: 133px;
+    padding-right: 133px;
 }
 
 .arrow {
-    border: solid black;
+    background-color: #FFFA9D;
+    border: solid #070032;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
     border-radius: 4px;
-    
   }
   
   .right {
@@ -64,3 +67,12 @@
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
   }
+
+  .weekDays
+  {
+      color: aliceblue;
+      font-size: 12px;
+      padding: 13px;
+      text-align: center;
+  }
+

@@ -1,4 +1,9 @@
-
+function highlightDay(ctrl)
+{
+    ctrl.style.background = '#26b4f6a2';
+    ctrl.style.border = "1px solid #FFFA9D"
+    ctrl.style.borderRadius = "45px";
+}
 
 today = new Date();
 currentMonth = today.getMonth();
@@ -6,7 +11,7 @@ currentYear = today.getFullYear();
 selectYear = document.getElementById("year");
 selectMonth = document.getElementById("month");
 
-months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
 monthAndYear = document.getElementById("monthAndYear");
 showCalendar(currentMonth, currentYear);
@@ -20,8 +25,6 @@ function onClick(){
     }
 }
 
-
-
 function next() {
     currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
     currentMonth = (currentMonth + 1) % 12;
@@ -33,8 +36,6 @@ function previous() {
     currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
     showCalendar(currentMonth, currentYear);
 }
-
-
 
 function showCalendar(month, year) {
 
@@ -73,6 +74,7 @@ function showCalendar(month, year) {
                 cellText = document.createTextNode(date);
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
+                    highlightDay(cell);
                 } // color today's date
                 cell.appendChild(cellText);
                 row.appendChild(cell);
@@ -82,14 +84,14 @@ function showCalendar(month, year) {
 
         }
 
-        tbl.appendChild(row); // appending each row into calendar body.
+        tbl.appendChild(row); 
     }
 
    
 }
 
 
-// check how many days in a month code from https://dzone.com/articles/determining-number-days-month
+
 function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
 }
