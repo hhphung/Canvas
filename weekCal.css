@@ -18,7 +18,6 @@ html *
     align-items: center;
 }
 
-
 .td{
     padding: 10px;
     border-radius: 5px;
@@ -28,7 +27,7 @@ html *
 .calendar{
     
     width: 100%;
-    background-color: #082b775c;
+    background-color: rgb(22, 52, 116);
     padding: 10 px;
 }
 
@@ -73,6 +72,37 @@ html *
       color: aliceblue;
       font-size: 12px;
       padding: 13px;
+      padding-bottom: 3px;
       text-align: center;
   }
+
+.events
+{
+    background-color: aliceblue;
+    width: 370px;
+    height: 300px;
+    position: relative;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.eventData
+{
+    position: relative;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 15px;
+    width: 330px;
+    font-weight: bold;
+}
+
+.xEvent
+{
+    background-color: Transparent;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 238px;
+    border: 0px;
+    width:auto;
+}
 

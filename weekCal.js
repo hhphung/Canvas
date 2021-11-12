@@ -2,19 +2,24 @@
 today = new Date();
 currentMonth = today.getMonth();
 currentYear = today.getFullYear();
-selectYear = document.getElementById("year");
-selectMonth = document.getElementById("month");
-
-prev = new Date();
-
 currentWeek = (today.getDate() - today.getDay());
-dayWeek = today.getDay();
 
 months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
 monthAndYear = document.getElementById("monthAndYear");
 showWeek(currentWeek);
 
+var highlight;
+function highlightDay(ctrl)
+{  
+    highlight.style.background = "rgb(7,0,50)";
+    highlight.style.border = "0px";
+    highlight = ctrl;
+
+    ctrl.style.background = "rgb(22, 52, 116)";
+    ctrl.style.border = "1px solid #FFFA9D"
+    ctrl.style.borderRadius = "45px";
+}
 
 function onClick(){
     document.body.onclick = function () {
@@ -43,6 +48,7 @@ function nextWeek()
     }
     showWeek(currentWeek);
 }
+
 function prevWeek()
 {
     if ( (currentWeek-7) < 1)
@@ -68,17 +74,26 @@ function showWeek(day)
     tbl = document.getElementById("calendar-body"); // body of the calendar
     tbl.innerHTML = "";
     let row = document.createElement("tr");
-
     monthAndYear.innerHTML = months[currentMonth] + " " + currentYear;
 
     for (var i = 0; i < 7; ++i)
     {
-        cell = document.createElement("td");
+        let cell = document.createElement("td");
+        cell.onclick = function(){highlightDay(cell)};
         cellText = document.createTextNode(day);
         cell.appendChild(cellText);
         row.appendChild(cell);
-        ++day;
 
+    
+        if (day === today.getDate() && currentYear === today.getFullYear() && currentMonth === today.getMonth()) 
+        {
+            cell.style.background = "rgb(22, 52, 116)";
+            cell.style.border = "1px solid #FFFA9D"
+            cell.style.borderRadius = "45px";
+            highlight = cell;
+        }
+        
+        ++day;
         if (day > daysInMonth(currentMonth, currentYear))
         {
             day = 1;
@@ -86,16 +101,11 @@ function showWeek(day)
         }
         if (day < 1)
         {
-            var monthCopy = currentMonth;
-            monthCopy = (currentMonth === 0) ? 11 : currentMonth - 1;
-            day = daysInMonth(monthCopy, currentYear);
+            day = daysInMonth(currentMonth, currentYear);
             continue;
         }
-        
     }
     tbl.appendChild(row); // appending each row into calendar body.
-
-    
 }
 
 // check how many days in a month code from https://dzone.com/articles/determining-number-days-month

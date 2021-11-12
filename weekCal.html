@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
+    <div class="container col-sm-4 col-md-7 col-lg-4 mt-5" style = "padding-left: 50px;">
   
         <div class="card">
           <i> <button class="arrow left" id="previous" onclick="prevWeek()"></button></i> 
@@ -28,15 +28,42 @@
                 </thead>
     
                 <tbody style = "color: #FFFA9D; font-size: 24px; text-align: center;" id="calendar-body">
-    
                 </tbody>
             </table>
     
-        
             <br/>
             <form class="form-inline">
-                <label for="month" id ="month">
-                <label for="year" id ="year">
+                <label for="month" id ="month"></label>
+                <label for="year" id ="year"></label>
+            </form>
+
+            <div class = "events">
+                <table style = "border-collapse: separate; border-spacing: 0 12px;">
+                    <tr>
+                        <td class = "eventData" style = "background-color:hotpink">testing
+                            <button class = "xEvent">X</button>
+                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  class = "eventData" style = "background-color:rgb(105, 255, 173)">testing
+                            <button class = "xEvent">X</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  class = "eventData" style = "background-color:hotpink">testing
+                            <button class = "xEvent">X</button>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td  class = "eventData" style = "background-color:rgb(255, 165, 105)">testing
+                            <button class = "xEvent">X</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
         </div>
     </div>    
 <script src = "weekCal.js"></script>
