@@ -6,6 +6,11 @@ currentWeek = (today.getDate() - today.getDay());
 
 months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
+const day =
+{
+    events: [""],
+}
+
 monthAndYear = document.getElementById("monthAndYear");
 showWeek(currentWeek);
 
@@ -19,6 +24,10 @@ function highlightDay(ctrl)
     ctrl.style.background = "rgb(22, 52, 116)";
     ctrl.style.border = "1px solid #FFFA9D"
     ctrl.style.borderRadius = "45px";
+
+    ctrl = day;
+    ctrl.events = ["clean", "zybooks"];
+    showEvents(ctrl);
 }
 
 function onClick(){
@@ -84,12 +93,12 @@ function showWeek(day)
         cell.appendChild(cellText);
         row.appendChild(cell);
 
-    
+        if (i == 0)
+        {
+            highlight = cell;
+        }
         if (day === today.getDate() && currentYear === today.getFullYear() && currentMonth === today.getMonth()) 
         {
-            cell.style.background = "rgb(22, 52, 116)";
-            cell.style.border = "1px solid #FFFA9D"
-            cell.style.borderRadius = "45px";
             highlight = cell;
         }
         
@@ -106,9 +115,16 @@ function showWeek(day)
         }
     }
     tbl.appendChild(row); // appending each row into calendar body.
+
+    highlightDay(highlight);
 }
 
 // check how many days in a month code from https://dzone.com/articles/determining-number-days-month
 function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
+}
+
+function deleteEvent(toDelete)
+{
+    toDelete.remove();
 }

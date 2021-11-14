@@ -38,30 +38,28 @@
             </form>
 
             <div class = "events">
-                <table style = "border-collapse: separate; border-spacing: 0 12px;">
-                    <tr>
-                        <td class = "eventData" style = "background-color:hotpink">testing
-                            <button class = "xEvent">X</button>
-                        
+                <table id = "eventstbl" style = "border-collapse: separate; border-spacing: 0 12px;">
+                    <tr id = "event1">
+                        <td class = "eventData" style = "background-color:hotpink">testing1
+                            <button class = "xEvent" onclick = "deleteEvent(event1)">X</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td  class = "eventData" style = "background-color:rgb(105, 255, 173)">testing
-                            <button class = "xEvent">X</button>
+                    <tr id = "event2">
+                        <td class = "eventData" style = "background-color:rgb(105, 255, 173)">testing2
+                            <button class = "xEvent" onclick = "deleteEvent(event2)">X</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td  class = "eventData" style = "background-color:hotpink">testing
-                            <button class = "xEvent">X</button>
+                    <tr id = "event3">
+                        <td class = "eventData" style = "background-color:hotpink">testing3
+                            <button class = "xEvent" onclick = "deleteEvent(event3)">X</button>
                         </td>
                     </tr>
-                    <tr> 
-                        <td  class = "eventData" style = "background-color:rgb(255, 165, 105)">testing
-                            <button class = "xEvent">X</button>
+                    <tr id = "event4"> 
+                        <td class = "eventData" style = "background-color:rgb(255, 165, 105)">testing4
+                            <button class = "xEvent" onclick = "deleteEvent(event4)">X</button>
                         </td>
                     </tr>
                 </table>
-
             </div>
 
         </div>
