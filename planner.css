@@ -70,6 +70,19 @@ html *
     bottom: 20px;
     border-radius: 5px;
 }
+
+.completedBox
+{
+    width: 400px;
+    height: 200px;
+    background-color: #070032;
+    position: relative;
+    left: 10px;
+    top: 20px;
+    bottom: 20px;
+    border-radius: 5px;
+}
+
 .detailsData
 {
     position: relative;
