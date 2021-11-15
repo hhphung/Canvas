@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="planner.css">
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Display' rel='stylesheet'>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        tr:nth-child(odd) {
+            background-color: #c3c3c3;
+        }
+        tr:nth-child(even) {
+            background-color: #FFFA9D;
+        }
+        input[type="radio"] {
+             margin: -1px;
+             vertical-align: middle;
+        }
+        .tab {
+            display: inline-block;
+            margin-left: 40px;
+        }
+    </style>
+    <script src="assignments.js"></script>
+</head>
+
+<body>
+    <h1 class="headers">ASSIGNMENTS</h1>
+
+    <div class="assignmentBox">
+        <p style=" color: #000000; position: relative; left: 23px; top: 20px; font-size: 26px"></p>
+        <table style="background-color:#070032; position: absolute; top: 20px; left:20px; width: 360px; border-radius: 5px; border-collapse: separate; border-spacing: 0px;">
+            <tr>
+                <th> </th>
+                <th> </th>
+            </tr>
+            <tr>
+                <td id="date1"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="assignment1"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="date2"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="assignment2"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="date3"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="assignment3"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="date4"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="assignment4"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="date5"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="assignment5"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="date6"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="assignment6"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="date7"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="assignment7"></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="completedBox">
+        <p style=" color: #FFFA9D; position: relative; left: 23px; top: 20px; font-size: 26px">COMPLETED</p>
+    </div>
+
+        <button class="buttonHome" onclick="history.back()" style="position:absolute; left:1370px; bottom: 100px; width:9%; font-size: 20px;" id="home">RETURN</button>
+        <button class="buttonHome" onclick="goHome()" style="position:absolute; left:1370px; bottom: 10px; width:9%; font-size: 20px;" id="home">HOME</button>
+
+        <script>
+            const duedates = new Array(7);
+            var today = new Date();
+            for (i = 0; i < 7; i++) {
+                n = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
+                y = n.getFullYear();
+                m = n.getMonth() + 1;
+                d = n.getDate();
+                duedates[i] = m + "/" + d + "/" + y;
+            }
+
+            document.getElementById("date1").innerHTML = duedates[0];
+            document.getElementById("date2").innerHTML = duedates[1];
+            document.getElementById("date3").innerHTML = duedates[2];
+            document.getElementById("date4").innerHTML = duedates[3];
+            document.getElementById("date5").innerHTML = duedates[4];
+            document.getElementById("date6").innerHTML = duedates[5];
+            document.getElementById("date7").innerHTML = duedates[6];
+
+            document.getElementById("assignment1").innerHTML = "test1";
+            document.getElementById("assignment2").innerHTML = "test2";
+            document.getElementById("assignment3").innerHTML = "test3";
+            document.getElementById("assignment4").innerHTML = "test4";
+            document.getElementById("assignment5").innerHTML = "test5";
+            document.getElementById("assignment6").innerHTML = "test6";
+            document.getElementById("assignment7").innerHTML = "test7";
+        </script>
+</body>
+</html>
