@@ -38,32 +38,30 @@
             </form>
 
             <div class = "events">
-                <table id = "eventstbl" style = "border-collapse: separate; border-spacing: 0 12px;">
-                    <tr id = "event1">
-                        <td class = "eventData" style = "background-color:hotpink">testing1
-                            <button class = "xEvent" onclick = "deleteEvent(event1)">X</button>
-                        </td>
-                    </tr>
-                    <tr id = "event2">
-                        <td class = "eventData" style = "background-color:rgb(105, 255, 173)">testing2
-                            <button class = "xEvent" onclick = "deleteEvent(event2)">X</button>
-                        </td>
-                    </tr>
-                    <tr id = "event3">
-                        <td class = "eventData" style = "background-color:hotpink">testing3
-                            <button class = "xEvent" onclick = "deleteEvent(event3)">X</button>
-                        </td>
-                    </tr>
-                    <tr id = "event4"> 
-                        <td class = "eventData" style = "background-color:rgb(255, 165, 105)">testing4
-                            <button class = "xEvent" onclick = "deleteEvent(event4)">X</button>
-                        </td>
-                    </tr>
+                <table id="eventstbl" class="table table-bordered table-responsive-sm" style = "border-collapse: separate; border-spacing: 0 12px;">
+                    <tbody id="events-body"></tbody>
                 </table>
             </div>
-
         </div>
-    </div>    
+    </div>  
+    <div class = "tempEnter">
+        <form>
+            <label for = "date">Date: </label>
+            <input type = "date" id = "date" name = "date"><br>
+
+            <label for="title">Title: </label>
+            <input type = "text" id = "title" name ="title"><br>
+
+            <label for = "color">Colors: </label>
+            <select id = "color" name = "color">
+                <option value = "blue">Blue</option>
+                <option value = "red">Red</option>
+                <option value = "purple">Purple</option>
+                <option value = "hotpink">Hot Pink</option>
+            </select>
+        </form>
+        <button type = "button" onclick = "enter()">enter</button>
+    </div>  
 <script src = "weekCal.js"></script>
 </body>
 </html>
