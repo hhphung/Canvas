@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
+    <div class="container col-sm-4 col-md-7 col-lg-4 mt-5" style = "padding-left: 50px;">
   
         <div class="card">
           <i> <button class="arrow left" id="previous" onclick="prevWeek()"></button></i> 
@@ -28,17 +28,40 @@
                 </thead>
     
                 <tbody style = "color: #FFFA9D; font-size: 24px; text-align: center;" id="calendar-body">
-    
                 </tbody>
             </table>
     
-        
             <br/>
             <form class="form-inline">
-                <label for="month" id ="month">
-                <label for="year" id ="year">
+                <label for="month" id ="month"></label>
+                <label for="year" id ="year"></label>
+            </form>
+
+            <div class = "events">
+                <table id="eventstbl" class="table table-bordered table-responsive-sm" style = "border-collapse: separate; border-spacing: 0 12px;">
+                    <tbody id="events-body"></tbody>
+                </table>
+            </div>
         </div>
-    </div>    
+    </div>  
+    <div class = "tempEnter">
+        <form>
+            <label for = "date">Date: </label>
+            <input type = "date" id = "date" name = "date"><br>
+
+            <label for="title">Title: </label>
+            <input type = "text" id = "title" name ="title"><br>
+
+            <label for = "color">Colors: </label>
+            <select id = "color" name = "color">
+                <option value = "blue">Blue</option>
+                <option value = "red">Red</option>
+                <option value = "purple">Purple</option>
+                <option value = "hotpink">Hot Pink</option>
+            </select>
+        </form>
+        <button type = "button" onclick = "enter()">enter</button>
+    </div>  
 <script src = "weekCal.js"></script>
 </body>
 </html>
