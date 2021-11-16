@@ -1,47 +1,43 @@
 <!DOCTYPE html>
-<html lang  ="en">
+<html lang="en">
 <head>
-    <link rel = "stylesheet" href = "personalPlanner.css">
-    <link href='https://fonts.googleapis.com/css?family=Red Hat Display' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="personalPlanner.css">
 </head>
-<script src = "combinedCalendar.js"></script>
-
 <body>
-    <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
-  
-        <div class="card">
-           
-          <i> <button class="arrow left" id="previous" onclick="previous()"></button></i> 
-          <i class="card-header" id="monthAndYear"></i>
-          <i> <button class="arrow right" id="next" onclick="next()"></button></i> 
-          
+    <section>
+        <div class="box">
+            <div class="container">
+                <div id="calendar">
 
-            <table class="table table-bordered table-responsive-sm" id="calendar">
-                <thead>
-                <tr>
-                    <th class = "weekDays">SUN</th>
-                    <th class = "weekDays">MON</th>
-                    <th class = "weekDays">TUE</th>
-                    <th class = "weekDays">WED</th>
-                    <th class = "weekDays">THU</th>
-                    <th class = "weekDays">FRI</th>
-                    <th class = "weekDays">SAT</th>
-                </tr>
-                </thead>
-    
-                <tbody style = "color: #FFFA9D; font-size: 24px; text-align: center;" id="calendar-body">
-    
-                </tbody>
-            </table>
-        
-            <br/>
-            <form class="form-inline">
-                <label for="month" id ="month">
-                <label for="year" id ="year">
+                </div>
+
+            </div>
         </div>
-    </div>
+ 
+    </section>
 
-    
-<script src = "personalPlanner.js"></script>
+  
+
+
+
+    <script src="personalPlanner.js"></script>
+    <script>
+        dycalendar.draw({
+            target:'#calendar',
+            type:'month',
+            dayformat:'full',
+            monthformat:'full',
+            highlighttargetdate:true,
+            prevnextbutton:'show'
+
+        })
+    </script>
+<script>
+
+
+</script>
 </body>
 </html>
