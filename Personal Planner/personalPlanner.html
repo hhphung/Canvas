@@ -19,13 +19,13 @@
       </div>
 
       <div id="weekdays">
-        <div>Sunday</div>
-        <div>Monday</div>
-        <div>Tuesday</div>
-        <div>Wednesday</div>
-        <div>Thursday</div>
-        <div>Friday</div>
-        <div>Saturday</div>
+        <div id ="day">Sunday</div>
+        <div id ="day">Monday</div>
+        <div id ="day">Tuesday</div>
+        <div id ="day">Wednesday</div>
+        <div id ="day">Thursday</div>
+        <div id ="day">Friday</div>
+        <div id ="day">Saturday</div>
       </div>
 
       <div id="calendar"></div>
@@ -35,11 +35,9 @@
       <h2>New Event</h2>
 
       <input id="eventTitleInput" placeholder="Event Title" />
-      <input id="eventDateInput" placeholder="Event Date" />
-      <input id="eventTimeInput" placeholder="Event Time" />
+    
+      <input type="time" id="eventTimeInput" name="time" min="0:00" max="24:00"  >
       <input id="eventLocationInput" placeholder="Event Location" />
-
-
 
 
       <button id="saveButton">Save</button>
@@ -48,14 +46,16 @@
 
     <div id="deleteEventModal">
       <h2>Event</h2>
-
+     
+      <div id = "eventBox">
       <p id="eventText"></p>
       <p id="eventDate"></p>
       <p id="eventTime"></p>
       <p id="eventLocation"></p>
-     
+    </div>
 
-
+    <p> </p>
+  
       <button id="deleteButton">Delete</button>
       <button id="closeButton">Close</button>
     </div>

@@ -2,6 +2,7 @@ let nav = 0;
 let clicked = null;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
+
 const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
 const deleteEventModal = document.getElementById('deleteEventModal');
@@ -21,7 +22,10 @@ function openModal(date) {
   const eventForDay = events.find(e => e.date === clicked);
 
   if (eventForDay) {
-    document.getElementById('eventText').innerText = eventForDay.title;
+    document.getElementById('eventText').innerText = "Title : " + eventForDay.title;
+    document.getElementById('eventDate').innerText = "Date: " + eventForDay.date;
+    document.getElementById('eventTime').innerText = "Time: " + eventForDay.time;
+    document.getElementById('eventLocation').innerText = "Location: " + eventForDay.location;
     deleteEventModal.style.display = 'block';
   } else {
     newEventModal.style.display = 'block';
@@ -44,7 +48,7 @@ function load() {
   const firstDayOfMonth = new Date(year, month, 1);
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   
-  const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
+  var dateString = firstDayOfMonth.toLocaleDateString('en-us', {
     weekday: 'long',
     year: 'numeric',
     month: 'numeric',
@@ -72,9 +76,13 @@ function load() {
       }
 
       if (eventForDay) {
+        
+        
+
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event');
         eventDiv.innerText = eventForDay.title;
+       
         daySquare.appendChild(eventDiv);
       }
 
@@ -93,7 +101,6 @@ function closeModal() {
   deleteEventModal.style.display = 'none';
   backDrop.style.display = 'none';
   eventTitleInput.value = '';
-  eventDateInput.value ='';
   eventLocationInput.value = '';
   eventTimeInput.value = '';
   clicked = null;
@@ -107,6 +114,8 @@ function saveEvent() {
     events.push({
       date: clicked,
       title: eventTitleInput.value,
+      location: eventLocationInput.value,
+      time:eventTimeInput.value 
     });
 
     localStorage.setItem('events', JSON.stringify(events));
@@ -121,6 +130,8 @@ function deleteEvent() {
   localStorage.setItem('events', JSON.stringify(events));
   closeModal();
 }
+
+
 
 function initButtons() {
   document.getElementById('nextButton').addEventListener('click', () => {
@@ -137,6 +148,8 @@ function initButtons() {
   document.getElementById('cancelButton').addEventListener('click', closeModal);
   document.getElementById('deleteButton').addEventListener('click', deleteEvent);
   document.getElementById('closeButton').addEventListener('click', closeModal);
+ 
+  
 }
 
 initButtons();
