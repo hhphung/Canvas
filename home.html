@@ -2,23 +2,69 @@
 <html>
 
 <head>
+    <title>MoreThanSports</title>
     <link rel="stylesheet" href="planner.css">
+    <link rel="stylesheet" href="menuS.css">
     <link href='https://fonts.googleapis.com/css?family=Red Hat Display' rel='stylesheet'>
+
 </head>
-<script src="home.js"></script>
 
 <body>
-    <h1 class="headers">STUDENT PLANNER</h1>
+    <header>
+        <!-- Navbar and Header -->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="#home" id="navbar__logo">STUDENT PLANNER</a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="combinedCalendar.html" class="navbar__links" id="calender-page">Calender</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="classSchedule.html" class="navbar__links" id="class_schedule-page">Schedule</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="assignments.html" class="navbar__links" id="assignments-page">assignments</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="PersonalPlanner/personalPlanner.html" class="navbar__links" id="personal_planner-page">Personal</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="To-do.html" class="navbar__links" id="to_doList-page">To-Do</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <div class="buttonContainer">
-        <button class="buttonHome" onclick="goToPage()" id="combined" style="width: 60%; font-size: 24px">Combined
-            Calendar</button>
-        <button class="buttonHome" onclick="test()" id="schedule" style="width: 60%; font-size: 24px">Class
-            Schedule</button>
-        <button class="buttonHome" onclick="test()" id="assign" style="width: 60%; font-size: 24px">Assignments</button>
-        <button class="buttonHome" onclick="test()" id="personal" style="width: 60%; font-size: 24px">Personal
-            Planner</button>
-        <button class="buttonHome" onclick="test()" id="todo" style="width: 60%; font-size: 24px">To - Do</button>
-    </div>
+
+        <A class="buttonHome" HREF="combinedCalendar.html" id="combined" style="width: 60%; font-size: 24px">Combined
+           Calendar</A>
+       <A class="buttonHome" HREF="classSchedule.html" id="schedule" style="width: 60%; font-size: 24px">Class
+           Schedule</A>
+       <A class="buttonHome" HREF="assignments.html" id="assign" style="width: 60%; font-size: 24px">Assignments</A>
+       <A class="buttonHome" HREF="PersonalPlanner/personalPlanner.html" id="personal" style="width: 60%; font-size: 24px">Personal
+           Planner</A>
+           <!-- this page is not avaliabale yet -->
+       <A class="buttonHome" HREF="To-do.html" id="todo" style="width: 60%; font-size: 24px">To - Do</A>
+
+   </div>
+
+
+   <footer id = "about">
+       <p>we are a group of students that are trying to make the perfect academic planner thats suits all types of students</p>
+       <p id ="contact">phone: 876786876876    <br> Email: student@gmail.com </p>
+   </footer>
+
+
+    <script src="home.js"></script>
 </body>
 
 </html>
