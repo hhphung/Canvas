@@ -3,6 +3,7 @@ let clicked = null;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
 
+
 const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
 const deleteEventModal = document.getElementById('deleteEventModal');
@@ -11,11 +12,14 @@ const eventTitleInput = document.getElementById('eventTitleInput');
 const eventDateInput = document.getElementById('eventDateInput');
 const eventTimeInput = document.getElementById('eventTimeInput');
 const eventLocationInput = document.getElementById('eventLocationInput');
-
+const eventReminder = document.getElementById('remind');
 
 
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+var b ='';
+var a = '';
+var newE = document.createElement("div");
 function openModal(date) {
   clicked = date;
 
@@ -26,6 +30,7 @@ function openModal(date) {
     document.getElementById('eventDate').innerText = "Date: " + eventForDay.date;
     document.getElementById('eventTime').innerText = "Time: " + eventForDay.time;
     document.getElementById('eventLocation').innerText = "Location: " + eventForDay.location;
+    document.getElementById('eventRemind').innerText = "Reminder: " + eventForDay.remind;
     deleteEventModal.style.display = 'block';
   } else {
     newEventModal.style.display = 'block';
@@ -55,34 +60,32 @@ function load() {
     day: 'numeric',
   });
   const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
-
+    
   document.getElementById('monthDisplay').innerText = 
     `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
 
   calendar.innerHTML = '';
 
   for(let i = 1; i <= paddingDays + daysInMonth; i++) {
-    const daySquare = document.createElement('div');
+    var daySquare = document.createElement('div');
+
     daySquare.classList.add('day');
 
     const dayString = `${month + 1}/${i - paddingDays}/${year}`;
-
+      
     if (i > paddingDays) {
       daySquare.innerText = i - paddingDays;
       const eventForDay = events.find(e => e.date === dayString);
-
+      a = eventForDay;
       if (i - paddingDays === day && nav === 0) {
         daySquare.id = 'currentDay';
       }
 
       if (eventForDay) {
         
-        
-
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event');
         eventDiv.innerText = eventForDay.title;
-       
         daySquare.appendChild(eventDiv);
       }
 
@@ -103,25 +106,31 @@ function closeModal() {
   eventTitleInput.value = '';
   eventLocationInput.value = '';
   eventTimeInput.value = '';
+  eventReminder.value = eventReminder[0].value;
   clicked = null;
   load();
 }
 
 function saveEvent() {
   if (eventTitleInput.value) {
-    eventTitleInput.classList.remove('error');
-
+     eventTitleInput.classList.remove('error');
     events.push({
-      date: clicked,
+       date: clicked,
       title: eventTitleInput.value,
       location: eventLocationInput.value,
-      time:eventTimeInput.value 
+      time:eventTimeInput.value ,
+      remind: eventReminder.value
     });
-
     localStorage.setItem('events', JSON.stringify(events));
     closeModal();
-  } else {
+  } 
+ 
+  
+  else {
+    
     eventTitleInput.classList.add('error');
+   
+    
   }
 }
 
@@ -130,24 +139,35 @@ function deleteEvent() {
   localStorage.setItem('events', JSON.stringify(events));
   closeModal();
 }
+function Add(){
+  closeModal();
+  newEventModal.style.display = 'block';
+  
+}
 
 
 
 function initButtons() {
-  document.getElementById('nextButton').addEventListener('click', () => {
+  var next = document.getElementsByClassName('nextButton');
+ 
+  next[0].addEventListener('click', () => {
     nav++;
     load();
   });
-
-  document.getElementById('backButton').addEventListener('click', () => {
+  
+  var back = document.getElementsByClassName('backButton');
+  
+  back[0].addEventListener('click', () => {
     nav--;
     load();
   });
 
+ 
   document.getElementById('saveButton').addEventListener('click', saveEvent);
   document.getElementById('cancelButton').addEventListener('click', closeModal);
   document.getElementById('deleteButton').addEventListener('click', deleteEvent);
   document.getElementById('closeButton').addEventListener('click', closeModal);
+  document.getElementById('addButton').addEventListener('click',  Add);
  
   
 }

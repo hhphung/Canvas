@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="personalPlanner.css">
   </head>
   <body>
-    
+    <button id = "home" onclick="window.location.href='https://www.google.com/';">
+      Back
+    </button> 
+   
+   
     <div id="container">
       <div id="header">
         <div id="monthDisplay"></div>
         <div>
-          <button id="backButton">Back</button>
-          <button id="nextButton">Next</button>
+         
+<a href="#" class="backButton">&#8249;</a>
+<a href="#" class="nextButton">&#8250;</a>
+  
         </div>
       </div>
 
@@ -33,30 +39,38 @@
 
     <div id="newEventModal">
       <h2>New Event</h2>
-
-      <input id="eventTitleInput" placeholder="Event Title" />
-    
+      <input id="eventTitleInput" placeholder="Title" />
       <input type="time" id="eventTimeInput" name="time" min="0:00" max="24:00"  >
-      <input id="eventLocationInput" placeholder="Event Location" />
-
-
+      <input id="eventLocationInput" placeholder="Location" />
+     
+      <select name="remind" id="remind">
+        <option value="None">None</option>
+        <option value="Daily">Daily</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Monthly">Monthly</option>
+        <option value="Yearly">Yearly</option>
+      </select>
+  
       <button id="saveButton">Save</button>
       <button id="cancelButton">Cancel</button>
     </div>
 
     <div id="deleteEventModal">
       <h2>Event</h2>
-     
+    <div id = "a">
       <div id = "eventBox">
       <p id="eventText"></p>
       <p id="eventDate"></p>
       <p id="eventTime"></p>
       <p id="eventLocation"></p>
+      <p id="eventRemind"></p>
+      
     </div>
-
+  </div>
     <p> </p>
   
       <button id="deleteButton">Delete</button>
+      <button id="addButton">Add</button>
       <button id="closeButton">Close</button>
     </div>
 
