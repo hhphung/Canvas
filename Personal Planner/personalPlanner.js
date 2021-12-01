@@ -2,6 +2,18 @@ let nav = 0;
 let clicked = null;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "coms-309-017.cs.iastate.edu",
+  user: "g19",
+  password: "coms319"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
 
 
 const calendar = document.getElementById('calendar');
