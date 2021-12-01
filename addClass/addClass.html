@@ -27,7 +27,7 @@
             margin-left: 40px;
         }
     </style>
-    <script src="addClass.js"></script>
+
 </head>
 
 
@@ -43,25 +43,25 @@
             </tr>
             <tr>
                 <tr>
-                    <td><label for="name">Class Name:</label></td>
+                    <td><label for="name" class="aClassF">Class Name:</label></td>
                     <td><input type="text" id="name" name="name" value=""></td>
                 </tr>
             </tr>
             <tr>
                 <tr>
-                    <td><label for="number">Class Number:</label></td>
+                    <td><label for="number" class="aClassF">Class Number:</label></td>
                     <td><input type="text" id="number" name="number" value=""></td>
                 </tr>
             </tr>
 
             <tr>
                 <tr>
-                    <td><label for="name">Class Section:</label></td>
+                    <td><label for="name" class="aClassF">Class Section:</label></td>
                     <td><input type="text" id="section" name="section" value=""></td>
                 </tr>
             </tr>
             <tr>
-                <td><label for="class">Type of Class:</label></td>
+                <td><label for="class" class="aClassF">Type of Class:</label></td>
                 <td>
                     <select name="class" id="class" align="right">
                         <option value="Lecture">Lecture</option>
@@ -71,53 +71,58 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="time">Time:</label></td>
+                <td><label for="time" class="aClassF">Time:</label></td>
                 <td><input type="time" id="time" name="time" value="" min="0:00" max="24:00"></td>
             </tr>
             <tr>
-                <td><label for="type">Days of Week:</label></td>
+                <td><label for="type" class="aClassF">Days of Week:</label></td>
                 <td>
 
                 </td>
             </tr>
             <tr>
-                <td><label for="date">Start Date:</label></td>
+                <td><label for="date" class="aClassF">Start Date:</label></td>
                 <td><input type="date" id="date" name="date" value="" min="2021-08-01" max="2022-05-13"></td>
             </tr>
             <tr>
-                <td><label for="date">End Date:</label></td>
+                <td><label for="date" class="aClassF">End Date:</label></td>
                 <td><input type="date" id="date" name="date" value="" min="2021-08-01" max="2022-05-13"></td>
             </tr>
 
             <tr>
-                <td><label for="Location">Location:</label></td>
+                <td><label for="Location" class="aClassF">Location:</label></td>
                 <td><input type="text" id="Location" name="Location" value=""></td>
             </tr>
             <tr>
-                <td><label for="name">Professor Name:</label></td>
+                <td><label for="name" class="aClassF">Professor Name:</label></td>
                 <td><input type="text" id="name" name="Email" value=""></td>
             </tr>
             <tr>
-                <td><label for="Email">Professor Email:</label></td>
+                <td><label for="Email" class="aClassF">Professor Email:</label></td>
                 <td><input type="text" id="Email" name="Email" value=""></td>
             </tr>
             <tr>
-                <td><label for="time">Office Hours:</label></td>
+                <td><label for="time" class="aClassF">Office Hours:</label></td>
                 <td><input type="time" id="time" name="time" value="" min="0:00" max="24:00"></td>
             </tr>
             <tr>
-                <td><label for="Location">Office Hours Location:</label></td>
+                <td><label for="Location" class="aClassF">Office Hours Location:</label></td>
                 <td><input type="text" id="Location" name="Location" value=""></td>
             </tr>
 
         </table>
     </div>
 
-    <label for="Color Picker">Select Color:</label>
+    <label for="Color Picker" class="aClassF">Select Color:</label>
     <input type="color" id="Color Picker" value="#0000ff">
     <button class="buttonHome" onclick="addClass()" style="position:absolute; left:23px; bottom: 150px; width:9%; font-size: 20px;" id="home">Add Class</button>
     <button class="buttonHome" onclick="history.back()" style="position:absolute; left:1370px; bottom: 100px; width:9%; font-size: 20px;" id="home">RETURN</button>
     <a href="../home.html" class="buttonHome" style="position:absolute; left:1370px; bottom: 10px; width:7%; font-size: 20px; text-decoration:none;" id="home">HOME</a>
+    <button id="sm" class="buttonHome" style="position:absolute; left:1370px; bottom: -110px; width:7%; font-size: 20px; text-decoration:none;">speech mode</button>
 
 
+    <script src="addClass.js"></script>
 </body>
+
+
+</html>

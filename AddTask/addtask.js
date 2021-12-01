@@ -45,3 +45,27 @@ function detail(list) {
         document.getElementById("d5").innerHTML = "**optional notes<br>";
     } else {}
 }
+
+
+var speak = document.getElementById("sm");
+
+
+speak.addEventListener('click', speakMode);
+
+var mode = 0;
+
+function speakMode() {
+    if (mode == 0) {
+
+        speak.innerHTML = "cancel";
+
+        mode = 1;
+    } else {
+
+        mode = 0;
+        speak.innerHTML = "speech mode";
+
+    }
+
+
+}

@@ -1,80 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>personal Planner</title>
 
     <link rel="stylesheet" href="personalPlanner.css">
-  </head>
-  <body>
-    <button id = "home" onclick="window.location.href='https://www.google.com/';">
+</head>
+
+<body>
+    <button id="home" onclick="window.location.href='../home.html';">
       Back
-    </button> 
-   
-   
+    </button>
+
+
     <div id="container">
-      <div id="header">
-        <div id="monthDisplay"></div>
-        <div>
-         
-<a href="#" class="backButton">&#8249;</a>
-<a href="#" class="nextButton">&#8250;</a>
-  
+        <div id="header">
+            <div id="monthDisplay"></div>
+            <div>
+
+                <a href="#" class="backButton">&#8249;</a>
+                <a href="#" class="nextButton">&#8250;</a>
+
+            </div>
         </div>
-      </div>
 
-      <div id="weekdays">
-        <div id ="day">Sunday</div>
-        <div id ="day">Monday</div>
-        <div id ="day">Tuesday</div>
-        <div id ="day">Wednesday</div>
-        <div id ="day">Thursday</div>
-        <div id ="day">Friday</div>
-        <div id ="day">Saturday</div>
-      </div>
+        <div id="weekdays">
+            <div id="day">Sunday</div>
+            <div id="day">Monday</div>
+            <div id="day">Tuesday</div>
+            <div id="day">Wednesday</div>
+            <div id="day">Thursday</div>
+            <div id="day">Friday</div>
+            <div id="day">Saturday</div>
+        </div>
 
-      <div id="calendar"></div>
+        <div id="calendar"></div>
     </div>
 
     <div id="newEventModal">
-      <h2>New Event</h2>
-      <input id="eventTitleInput" placeholder="Title" />
-      <input type="time" id="eventTimeInput" name="time" min="0:00" max="24:00"  >
-      <input id="eventLocationInput" placeholder="Location" />
-     
-      <select name="remind" id="remind">
+        <h2>New Event</h2>
+        <input id="eventTitleInput" placeholder="Title" />
+        <input type="time" id="eventTimeInput" name="time" min="0:00" max="24:00">
+        <input id="eventLocationInput" placeholder="Location" />
+
+        <select name="remind" id="remind">
         <option value="None">None</option>
         <option value="Daily">Daily</option>
         <option value="Weekly">Weekly</option>
         <option value="Monthly">Monthly</option>
         <option value="Yearly">Yearly</option>
       </select>
-  
-      <button id="saveButton">Save</button>
-      <button id="cancelButton">Cancel</button>
+
+        <button id="saveButton">Save</button>
+        <button id="cancelButton">Cancel</button>
     </div>
 
     <div id="deleteEventModal">
-      <h2>Event</h2>
-    <div id = "a">
-      <div id = "eventBox">
-      <p id="eventText"></p>
-      <p id="eventDate"></p>
-      <p id="eventTime"></p>
-      <p id="eventLocation"></p>
-      <p id="eventRemind"></p>
-      
-    </div>
-  </div>
-    <p> </p>
-  
-      <button id="deleteButton">Delete</button>
-      <button id="addButton">Add</button>
-      <button id="closeButton">Close</button>
+        <h2>Event</h2>
+        <div id="a">
+            <div id="eventBox">
+                <p id="eventText"></p>
+                <p id="eventDate"></p>
+                <p id="eventTime"></p>
+                <p id="eventLocation"></p>
+                <p id="eventRemind"></p>
+
+            </div>
+        </div>
+        <p> </p>
+
+        <button id="deleteButton">Delete</button>
+        <button id="addButton">Add</button>
+        <button id="closeButton">Close</button>
     </div>
 
     <div id="modalBackDrop"></div>
 
     <script src="personalPlanner.js"></script>
-  </body>
+</body>
