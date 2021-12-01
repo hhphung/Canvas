@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="todolist.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Red Hat Display' rel='stylesheet'>
+</head>
+<script src="addtask.js"></script>
+
+<body>
+    <h1 class="headers">ADD TASK</h1>
+    <div class="addBox">
+        <table style="background-color: aliceblue; position: absolute; top: 20px; left:20px; width: 360px; height: 560px; border-radius: 5px;">
+            <tr>
+                <td id="a1" onclick="detail(this)" style="font-size: 18px; padding-left: 5px;">
+                    <b>List Title:</b><span class="td"><input type="text"/></span>
+                </td>
+            </tr>
+            <tr>
+                <td id="a2" onclick="detail(this)" style="font-size: 18px; padding-left: 5px;">
+                    <b>Task 1:</b><span class="td"><input type="text"/></span>
+                </td>
+            </tr>
+            <tr>
+                <td id="a3" onclick="detail(this)" style="font-size: 18px; padding-left: 5px;">
+                    <b>Task 2*:</b><span class="td"><input type="text"/></span>
+                </td>
+            </tr>
+            <tr>
+                <td id="a4" onclick="detail(this)" style="font-size: 18px; padding-left: 5px;">
+                    <b>Task 3*: </b><span class="td"><input type="text"/></span>
+                </td>
+            </tr>
+            <tr>
+                <td id="a5" onclick="detail(this)" style="font-size: 18px; padding-left: 5px;">
+                    <b>Task 4* :</b><span class="td"><input type="text"/></span>
+                </td>
+            </tr>
+            <tr>
+                <td id="a6" onclick="detail(this)" style="font-size: 18px; padding-left: 5px;">
+                    <b>Repeated: </b><span class="td">
+                    <th class = "weekDays">SUN</th>
+                    <th class = "weekDays">MON</th>
+                    <th class = "weekDays">TUE</th>
+                    <th class = "weekDays">WED</th>
+                    <th class = "weekDays">THU</th>
+                    <th class = "weekDays">FRI</th>
+                    <th class = "weekDays">SAT</th>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td id="a7" onclick="detail(this)" style="font-size: 18px; padding-left: 5px;">
+                    <b>Notes: </b><span class="td"><input type="text"/></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <button class="buttonAdd" onclick="buttonAdd()" style="position:absolute; left:1370px; bottom: 150px; width:9%; font-size: 20px;" id="add">ADD</button>
+    <button class="buttonReturn" onclick="buttonReturn()" style="position:absolute; left:1370px; bottom: 80px; width:9%; font-size: 20px;" id="return">RETURN</button>
+    <a href="../home.html" class="buttonHome" style="position:absolute; left:1370px; bottom: 10px; width:7%; font-size: 20px; text-decoration:none;" id="home">HOME</a>
+
+</body>
+
+</html>
