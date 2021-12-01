@@ -1,3 +1,9 @@
+var speakMode = document.getElementById("sm");
+
+console.log(speakMode.innerHTML);
+
+
+
 var b = document.getElementById("b");
 
 var c = document.getElementById("c");
