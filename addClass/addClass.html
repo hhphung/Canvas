@@ -8,16 +8,20 @@
         table {
             border-collapse: collapse;
         }
+        
         tr:nth-child(odd) {
             background-color: #c3c3c3;
         }
+        
         tr:nth-child(even) {
             background-color: #FFFA9D;
         }
+        
         input[type="radio"] {
-             margin: -1px;
-             vertical-align: middle;
+            margin: -1px;
+            vertical-align: middle;
         }
+        
         .tab {
             display: inline-block;
             margin-left: 40px;
@@ -29,7 +33,7 @@
 
 <body>
     <h1 class="headers">Add Class</h1>
-    
+
     <div class="assignmentBox">
         <p style=" color: #000000; position: relative; left: 23px; top: 20px; font-size: 26px"></p>
         <table style="background-color:#070032; position: absolute; top: 20px; left:20px; width: 100%; border-radius: 5px; border-collapse: separate; border-spacing: 0px;">
@@ -49,7 +53,7 @@
                     <td><input type="text" id="number" name="number" value=""></td>
                 </tr>
             </tr>
-            
+
             <tr>
                 <tr>
                     <td><label for="name">Class Section:</label></td>
@@ -69,7 +73,7 @@
             <tr>
                 <td><label for="time">Time:</label></td>
                 <td><input type="time" id="time" name="time" value="" min="0:00" max="24:00"></td>
-            </tr>  
+            </tr>
             <tr>
                 <td><label for="type">Days of Week:</label></td>
                 <td>
@@ -104,7 +108,7 @@
             <tr>
                 <td><label for="Location">Office Hours Location:</label></td>
                 <td><input type="text" id="Location" name="Location" value=""></td>
-            </tr>  
+            </tr>
 
         </table>
     </div>
@@ -113,7 +117,7 @@
     <input type="color" id="Color Picker" value="#0000ff">
     <button class="buttonHome" onclick="addClass()" style="position:absolute; left:23px; bottom: 150px; width:9%; font-size: 20px;" id="home">Add Class</button>
     <button class="buttonHome" onclick="history.back()" style="position:absolute; left:1370px; bottom: 100px; width:9%; font-size: 20px;" id="home">RETURN</button>
-    <button class="buttonHome" onclick="goHome()" style="position:absolute; left:1370px; bottom: 10px; width:9%; font-size: 20px;" id="home">HOME</button>
+    <a href="../home.html" class="buttonHome" style="position:absolute; left:1370px; bottom: 10px; width:7%; font-size: 20px; text-decoration:none;" id="home">HOME</a>
 
 
 </body>
