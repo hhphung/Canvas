@@ -132,3 +132,33 @@ h1.title {
     border-radius: 5px;
     font-weight: 500;
 }
+
+.class:hover {
+    transform: scale(1.1);
+}
+
+.buttonClass:hover {
+    transform: scale(1.1);
+}
+
+#hide {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    background: rgb(252, 252, 253);
+    position: absolute;
+    top: 20px;
+    left: 0px;
+}
+
+#cancelHide {
+    position: absolute;
+    top: 600px;
+    left: 20px;
+    height: 200px;
+    width: 200px;
+    font-size: 50px;
+}

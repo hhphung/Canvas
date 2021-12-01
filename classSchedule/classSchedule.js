@@ -1,3 +1,9 @@
+var largerText = "";
+
+var pressed = "0";
+
+
+
 var b = document.getElementById("b");
 
 var c = document.getElementById("c");
@@ -28,6 +34,12 @@ function classDetail(evt) {
         var msg = new SpeechSynthesisUtterance();
         msg.text = evt.currentTarget.innerHTML;
         window.speechSynthesis.speak(msg);
+
+
+    } else if (mode == 2) {
+
+        largerText = evt.currentTarget.innerHTML;
+        pressed = 1;
 
 
     } else {
@@ -85,6 +97,12 @@ function makevis() {
         window.speechSynthesis.speak(msg);
 
 
+    } else if (mode == 2) {
+
+        largerText = edit.innerHTML;
+        pressed = 1;
+
+
     } else {
 
 
@@ -109,6 +127,12 @@ function canc() {
         window.speechSynthesis.speak(msg);
 
 
+    } else if (mode == 2) {
+
+        largerText = cn.innerHTML;
+        pressed = 1;
+
+
     } else {
 
         i.style.display = 'none';
@@ -131,6 +155,12 @@ function conf() {
         var msg = new SpeechSynthesisUtterance();
         msg.text = cf.innerHTML;
         window.speechSynthesis.speak(msg);
+
+
+    } else if (mode == 2) {
+
+        largerText = cf.innerHTML;
+        pressed = 1;
 
 
     } else {
@@ -196,6 +226,14 @@ function speaker(evt) {
         window.speechSynthesis.speak(msg);
 
 
+    } else if (mode == 2) {
+
+        largerText = evt.currentTarget.innerHTML;
+
+        pressed = 1;
+
+
+
     }
 
 
@@ -221,6 +259,68 @@ elements.forEach(element => {
             window.speechSynthesis.speak(msg);
 
 
+        } else if (mode == 2) {
+
+
+
+            largerText = evt.currentTarget.innerHTML;
+
+            pressed = 1;
+
+
         }
     });
 });
+
+
+
+
+
+$('#larger').click(function() {
+    // hide all in body except #e2, and #e2's parents.
+    if (mode == 0) {
+        mode = 2;
+
+        document.getElementById("larger").innerHTML = "conform";
+
+
+
+    } else if (mode == 2 && pressed == 1) {
+
+
+        mode = 3;
+
+        document.getElementById("larger").innerHTML = "larger";
+
+
+        document.getElementById("hide").style.visibility = "visible";
+
+        document.getElementById("hide").innerHTML = largerText;
+
+        $('body *').not($('#hide').parents().addBack()).css({ visibility: 'hidden' });
+
+        document.getElementById("cancelHide").style.visibility = "visible";
+
+
+
+        return false; // cancel bubbling and default hyperlink effect.
+    }
+});
+
+$('#hide').click(function() { // click on #e2
+    return false; // cancel bubbling -- ignore click.
+})
+
+
+$('#cancelHide').click(function() { // click on #e2
+    mode = 0;
+    $('body *').css({ visibility: 'visible' }); // show all in body.
+
+    document.getElementById("hide").style.visibility = "hidden";
+    document.getElementById("cancelHide").style.visibility = "hidden";
+
+    pressed = 0;
+
+
+
+})
