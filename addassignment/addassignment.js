@@ -9,6 +9,11 @@ function goHome()
 }
 
 function addAssignment() {
+    new Assignment();
+    Assignment.date = getelement.id('date')
+    Assignment.time = getelement.id('time')
+    Assignment.type = getelement.id('type')
+    Assignment.class = getelement.id('class')
  
 }
 
