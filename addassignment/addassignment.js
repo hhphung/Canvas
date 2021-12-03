@@ -9,11 +9,11 @@ function goHome()
 }
 
 function addAssignment() {
-    new Assignment();
-    Assignment.date = getelement.id('date')
-    Assignment.time = getelement.id('time')
-    Assignment.type = getelement.id('type')
-    Assignment.class = getelement.id('class')
+    store =  new Assignment();
+    Assignment.date = document.getElementById('date');
+    Assignment.time = document.getElementById('time');
+    Assignment.type = document.getElementById('type');
+    Assignment.assignclass = document.getElementById('class');
  
 }
 
