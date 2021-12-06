@@ -10,7 +10,6 @@ html *
 
 .headers
 {
-    
     font-size: 40px;
     color: aliceblue;
     text-align: center;
@@ -25,10 +24,6 @@ html *
     border: 2px solid #070032;
     color: #070032;
     padding: 15px;
-
-    display: inline-block;
-    text-decoration: none;
-
     text-align: center;
     margin-bottom: 8px;
     border-radius: 5px;
@@ -40,7 +35,6 @@ html *
     width: 100%;
     height: 100%;
     text-align: center;
-    padding-top: 100px;
 }
 
 .viewBox
@@ -54,39 +48,7 @@ html *
     border-radius: 5px;
 }
 
-.detailsBox
-{
-    width: 400px;
-    height: 400px;
-    background-color: #070032;
-    position: relative;
-    left: 10px;
-    bottom: 20px;
-    border-radius: 5px;
-}
 
-.assignmentBox
-{
-    width: 400px;
-    height: 375px;
-    background-color: #070032;
-    position: relative;
-    left: 10px;
-    bottom: 20px;
-    border-radius: 5px;
-}
-
-.completedBox
-{
-    width: 400px;
-    height: 200px;
-    background-color: #070032;
-    position: relative;
-    left: 10px;
-    top: 20px;
-    bottom: 20px;
-    border-radius: 5px;
-}
 
 .detailsData
 {
@@ -94,7 +56,119 @@ html *
     font-size: 18px;
     background-color: aliceblue;
     border-radius: 5px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+
+
     padding-left: 8px;
 }
+
+/*personal calendar*/
+
+.container {
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.td{
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar{
+    
+    width: 100%;
+    background-color: #082b775c;
+    padding: 10 px;
+}
+
+.card{
+    display: inline-block;
+    background-color: #070032;
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px;
+}
+
+.card-header{
+    color: aliceblue;
+    font-size: 15px;
+    text-align: center;
+    font-family : Arial;
+    padding-left: 133px;
+    padding-right: 133px;
+}
+
+.arrow {
+    background-color: #FFFA9D;
+    border: solid #070032;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 4px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+  .weekDays
+  {
+      color: aliceblue;
+      font-size: 12px;
+      padding: 13px;
+      text-align: center;
+  }
+
+  .events
+  {
+      background-color: aliceblue;
+      width: 370px;
+      height: 300px;
+      position: relative;
+      border-radius: 5px;
+      padding-left: 10px;
+      overflow-y:scroll;
+  }
+
+  .nameButton
+  {
+      background-color: transparent;
+      font-size: 18px;
+      max-width: 285px;
+      word-wrap: break-word;
+      font-weight: bold;
+      border-color: transparent;
+  }
+  
+  .eventData
+  {
+      position: relative;
+      font-size: 18px;
+      border-radius: 5px;
+      padding: 15px;
+      width: 330px;
+      font-weight: bold;
+  }
+  
+  .xEvent
+  {
+      background-color: Transparent;
+      font-size: 18px;
+      font-weight: bold;
+      float: right;
+      border: 0px;
+      width:auto;
+  }
+
