@@ -1,3 +1,7 @@
+localStorage.removeItem('password');
+localStorage.removeItem('name');
+
+
 var acounts = {};
 var students = [];
 acounts.students = students;
@@ -86,6 +90,9 @@ function create() {
     fn = userName.value;
     pw = pass.value;
 
+    localStorage.setItem("name", fn);
+    localStorage.setItem("password", pw);
+
 
     var student = {
         "firstName": fn,
@@ -118,9 +125,9 @@ function create() {
 
     console.log(JSON.stringify(user));
 
-    module.exports = { now };
 
-    location.href = '../home.html';
+
+    location.href = './home.html';
 
 
 }
@@ -178,15 +185,20 @@ function logger() {
     fn = userNameL.value;
     pw = passL.value;
 
+    localStorage.setItem("name", fn);
+    localStorage.setItem("password", pw);
+
     now = JSON.stringify(findStudent(fn, pw));
 
     console.log("now");
     console.log(now);
 
-    location.href = '../home.html';
 
 
-    module.exports = { now };
+    location.href = '/home.html';
+
+
+    //module.exports = { now };
 
 
 

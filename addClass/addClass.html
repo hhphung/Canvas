@@ -77,16 +77,17 @@
             <tr>
                 <td><label for="type" class="aClassF">Days of Week:</label></td>
                 <td>
+                    <td><input type="text" id="dayOfweek" name="dayOfweek" value=""></td>
 
                 </td>
             </tr>
             <tr>
                 <td><label for="date" class="aClassF">Start Date:</label></td>
-                <td><input type="date" id="date" name="date" value="" min="2021-08-01" max="2022-05-13"></td>
+                <td><input type="date" id="dateS" name="date" value="" min="2021-08-01" max="2022-05-13"></td>
             </tr>
             <tr>
                 <td><label for="date" class="aClassF">End Date:</label></td>
-                <td><input type="date" id="date" name="date" value="" min="2021-08-01" max="2022-05-13"></td>
+                <td><input type="date" id="dateE" name="dateE" value="" min="2021-08-01" max="2022-05-13"></td>
             </tr>
 
             <tr>
@@ -95,7 +96,7 @@
             </tr>
             <tr>
                 <td><label for="name" class="aClassF">Professor Name:</label></td>
-                <td><input type="text" id="name" name="Email" value=""></td>
+                <td><input type="text" id="nameP" name="nameP" value=""></td>
             </tr>
             <tr>
                 <td><label for="Email" class="aClassF">Professor Email:</label></td>
@@ -103,11 +104,11 @@
             </tr>
             <tr>
                 <td><label for="time" class="aClassF">Office Hours:</label></td>
-                <td><input type="time" id="time" name="time" value="" min="0:00" max="24:00"></td>
+                <td><input type="time" id="timeOH" name="timeOH" value="" min="0:00" max="24:00"></td>
             </tr>
             <tr>
                 <td><label for="Location" class="aClassF">Office Hours Location:</label></td>
-                <td><input type="text" id="Location" name="Location" value=""></td>
+                <td><input type="text" id="LocationOH" name="LocationOH" value=""></td>
             </tr>
 
         </table>
@@ -115,7 +116,7 @@
 
     <label for="Color Picker" class="aClassF">Select Color:</label>
     <input type="color" id="Color Picker" value="#0000ff">
-    <button class="buttonHome" onclick="addClass()" style="position:absolute; left:23px; bottom: 150px; width:9%; font-size: 20px;" id="home">Add Class</button>
+    <button class="buttonHome" id="aClass" style="position:absolute; left:23px; bottom: 150px; width:9%; font-size: 20px;" id="home">Add Class</button>
     <button class="buttonHome" onclick="history.back()" style="position:absolute; left:1370px; bottom: 100px; width:9%; font-size: 20px;" id="home">RETURN</button>
     <a href="../home.html" class="buttonHome" style="position:absolute; left:1370px; bottom: 10px; width:7%; font-size: 20px; text-decoration:none;" id="home">HOME</a>
     <button id="sm" class="buttonHome" style="position:absolute; left:1370px; bottom: -110px; width:7%; font-size: 20px; text-decoration:none;">speech mode</button>
