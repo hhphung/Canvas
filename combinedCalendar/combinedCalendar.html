@@ -1,60 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link rel="stylesheet" href="planner.css">
     <link href='https://fonts.googleapis.com/css?family=Red Hat Display' rel='stylesheet'>
 </head>
 
-
 <body>
     <h1 class="headers">COMBINED CALENDAR</h1>
+
+    <div class="container col-sm-4 col-md-7 col-lg-4 mt-5" style="padding-left: 50px;">
+
+        <div class="card">
+            <i> <button class="arrow left" id="previous" onclick="prevWeek()"></button></i>
+            <i class="card-header" id="monthAndYear"></i>
+            <i> <button class="arrow right" id="next" onclick="nextWeek()"></button></i>
+
+
+            <table class="table table-bordered table-responsive-sm" id="calendar">
+                <thead>
+                    <tr>
+                        <th class="weekDays">SUN</th>
+                        <th class="weekDays">MON</th>
+                        <th class="weekDays">TUE</th>
+                        <th class="weekDays">WED</th>
+                        <th class="weekDays">THU</th>
+                        <th class="weekDays">FRI</th>
+                        <th class="weekDays">SAT</th>
+                    </tr>
+                </thead>
+
+                <tbody style="color: #FFFA9D; font-size: 24px; text-align: center;" id="calendar-body">
+                </tbody>
+            </table>
+
+            <br />
+            <form class="form-inline">
+                <label for="month" id="month"></label>
+                <label for="year" id="year"></label>
+            </form>
+
+            <div class="events">
+                <table id="eventstbl" class="table table-bordered table-responsive-sm"
+                    style="border-collapse: separate; border-spacing: 0 12px;">
+                    <tbody id="events-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="tempEnter">
+        <form>
+            <label for="date">Date: </label>
+            <input type="date" id="date" name="date"><br>
+
+            <label for="title">Title: </label>
+            <input type="text" id="title" name="title"><br>
+
+            <label for="calendarIn">Calendar: </label>
+            <select id="calendarIn" name="calendarIn">
+                <option value="Class Schedule">Class Schedule</option>
+                <option value="Assignments">Assignments</option>
+                <option value="Personal Planner">Personal Planner</option>
+                <option value="To-Do">To-Do</option>
+            </select><br>
+            
+
+            <label for="color">Colors: </label>
+            <select id="color" name="color">
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="purple">Purple</option>
+                <option value="hotpink">Hot Pink</option>
+            </select>
+
+        </form>
+        <button type="button" onclick="enter()">enter</button>
+    </div>
+
+    <div style="position: absolute; left: 580px;">
+        
+        <table
+            style="background-color:#070032; padding-left: 20px; padding-bottom: 20px; padding-top: 20px; padding-right: 20px; position: relative; width: 360px; border-radius: 5px; border-collapse: separate; border-spacing: 0 12px;">
+            <th style="color: #FFFA9D; position:relative; font-size:26px; text-align: left;">Details</th>
+            
+            <tbody id = "detailstbl">
+            </tbody>
+        </table>
+    </div>
+
+
     <div class="viewBox">
         <p style="color: #FFFA9D; position:relative; left: 23px; top: 20px; font-size:26px">View</p>
-        <table style="background-color: aliceblue; position: absolute; top: 60px; left:20px; width: 260px; height: 120px; border-radius: 5px;">
+        <table
+            style="background-color: aliceblue; position: absolute; top: 60px; left:20px; width: 260px; height: 120px; border-radius: 5px;">
             <tr>
-                <td id="classSchedule" onclick="highlight(this)" style="font-size: 18px; padding-left: 5px;">Class Schedule</td>
+                <td id="classSchedule" onclick="highlightView(id)" style="font-size: 18px; padding-left: 5px;">Class
+                    Schedule</td>
             </tr>
             <tr>
-                <td id="assignments" onclick="highlight(this)" style="font-size: 18px; padding-left: 5px;">Assignments</td>
+                <td id="assignments" onclick="highlightView(id)" style="font-size: 18px; padding-left: 5px;">Assignments
+                </td>
             </tr>
             <tr>
-                <td id="personal" onclick="highlight(this)" style="font-size: 18px; padding-left: 5px;">Personal Planner</td>
+                <td id="personal" onclick="highlightView(id)" style="font-size: 18px; padding-left: 5px;">Personal Planner
+                </td>
             </tr>
             <tr>
-                <td id="todo" onclick="highlight(this)" style="font-size: 18px; padding-left: 5px;">To-Do</td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="detailsBox">
-        <p style="color: #FFFA9D; position:relative; left: 23px; top: 20px; font-size:26px">Details</p>
-        <table style="background-color:#070032; position: absolute; top: 50px; left:20px; width: 360px; border-radius: 5px; border-collapse: separate; border-spacing: 0 12px;">
-            <tr>
-                <td class="detailsData">Calendar: </td>
-            </tr>
-            <tr>
-                <td class="detailsData">Title:</td>
-            </tr>
-            <tr>
-                <td class="detailsData">Class:</td>
-            </tr>
-            <tr>
-                <td class="detailsData">Type: </td>
-            </tr>
-            <tr>
-                <td class="detailsData" style="padding-bottom: 110px;">Notes: </td>
+                <td id="todo" onclick="highlightView(id)" style="font-size: 18px; padding-left: 5px;">To-Do</td>
             </tr>
         </table>
     </div>
 
-
-    <a href="../home.html" class="buttonHome" style="position:absolute; left:1370px; bottom: 10px; width:7%; font-size: 20px; text-decoration:none;" id="home">HOME</a>
-
-
-
-
-    <button id="speakMode" class="buttonHome" style="font-size: 40px;">speech mode</button>
+    <button class="buttonHome" onclick="goHome()"
+        style="position:absolute; left:1370px; bottom: 10px; width:9%; font-size: 20px;" id="home">HOME</button>
 
 
     <script src="combinedCalendar.js"></script>

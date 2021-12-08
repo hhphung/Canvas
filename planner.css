@@ -1,16 +1,12 @@
-body 
-{
-    background: linear-gradient(to bottom,  rgba(3,0,196,1) 0%,rgba(0,157,255,1) 50%,rgba(3,0,196,1) 100%);
+body {
+    background: linear-gradient(to bottom, rgba(3, 0, 196, 1) 0%, rgba(0, 157, 255, 1) 50%, rgba(3, 0, 196, 1) 100%);
 }
 
-html *
-{
+html * {
     font-family: "Red Hat Display";
 }
 
-.headers
-{
-    
+.headers {
     font-size: 40px;
     color: aliceblue;
     text-align: center;
@@ -19,32 +15,27 @@ html *
     letter-spacing: 2px;
 }
 
-.buttonHome
-{
+.buttonHome {
     background-color: #FFFA9D;
     border: 2px solid #070032;
     color: #070032;
     padding: 15px;
-
     display: inline-block;
     text-decoration: none;
-
     text-align: center;
     margin-bottom: 8px;
     border-radius: 5px;
     font-weight: 500;
 }
 
-.buttonContainer
-{
+.buttonContainer {
     width: 100%;
     height: 100%;
     text-align: center;
     padding-top: 100px;
 }
 
-.viewBox
-{
+.viewBox {
     width: 300px;
     height: 200px;
     background-color: #070032;
@@ -54,8 +45,7 @@ html *
     border-radius: 5px;
 }
 
-.detailsBox
-{
+.detailsBox {
     width: 400px;
     height: 400px;
     background-color: #070032;
@@ -65,8 +55,7 @@ html *
     border-radius: 5px;
 }
 
-.assignmentBox
-{
+.assignmentBox {
     width: 400px;
     height: 375px;
     background-color: #070032;
@@ -76,8 +65,7 @@ html *
     border-radius: 5px;
 }
 
-.completedBox
-{
+.completedBox {
     width: 400px;
     height: 200px;
     background-color: #070032;
@@ -88,8 +76,7 @@ html *
     border-radius: 5px;
 }
 
-.detailsData
-{
+.detailsData {
     position: relative;
     font-size: 18px;
     background-color: aliceblue;
