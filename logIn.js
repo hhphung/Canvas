@@ -90,8 +90,7 @@ function create() {
     fn = userName.value;
     pw = pass.value;
 
-    localStorage.setItem("name", fn);
-    localStorage.setItem("password", pw);
+
 
 
     var student = {
@@ -102,6 +101,9 @@ function create() {
 
     //localStorage.removeItem('users');
     localStorage.clear();
+
+    localStorage.setItem("name", fn);
+    localStorage.setItem("password", pw);
     acounts.students.push(student);
 
 

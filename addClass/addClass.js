@@ -144,7 +144,7 @@ function addClass() {
 
     }
 
-    localStorage.clear();
+    localStorage.removeItem('users');
 
 
 

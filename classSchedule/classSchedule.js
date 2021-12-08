@@ -324,3 +324,86 @@ $('#cancelHide').click(function() { // click on #e2
 
 
 })
+
+var shower = document.getElementById("show");
+
+shower.addEventListener('click', show);
+
+function show() {
+
+
+    var nameAdd = localStorage.getItem('name');
+    var passAdd = localStorage.getItem('password');
+    console.log(nameAdd);
+    console.log(passAdd);
+
+    var thisStudent = findStudent(nameAdd, passAdd);
+
+
+
+    console.log(JSON.stringify(thisStudent))
+
+    const ids = ["b", "c", "d", "e"];
+
+
+    for (var i = 0; i < thisStudent.classes.length; i++) {
+
+        document.getElementById(ids[i]).innerHTML = JSON.stringify(thisStudent.classes[i].className);
+
+        console.log(document.getElementById(ids[i]).innerHTML);
+
+
+
+    }
+
+}
+
+
+
+
+function findStudent(name, pass) {
+
+    var all = JSON.parse(localStorage.getItem('users'));
+
+    var allSize = all.students.length;
+
+    console.log(allSize);
+
+
+
+
+    for (var l = 0; l < allSize; l++) {
+
+        console.log(l);
+
+        if ((all.students[l].firstName) == name) {
+
+            console.log("name");
+            console.log(JSON.stringify(all.students[l].firstName));
+            console.log(name);
+            console.log("pass1");
+
+
+
+
+            if ((all.students[l].password) == pass) {
+
+
+                console.log("password");
+                console.log(JSON.stringify(all.students[l].password));
+                console.log(pass);
+
+                console.log("pass2");
+
+
+                return all.students[l];
+
+            }
+
+
+
+        }
+    }
+    console.log("not found")
+
+}
