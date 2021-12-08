@@ -20,12 +20,14 @@ const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 var b ='';
 var a = '';
 var newE = document.createElement("div");
+let day = null;
 function openModal(date) {
   clicked = date;
 
   const eventForDay = events.find(e => e.date === clicked);
 
   if (eventForDay) {
+    var data = [];
     document.getElementById('eventText').innerText = "Title : " + eventForDay.title;
     document.getElementById('eventDate').innerText = "Date: " + eventForDay.date;
     document.getElementById('eventTime').innerText = "Time: " + eventForDay.time;
@@ -88,7 +90,7 @@ function load() {
         eventDiv.innerText = eventForDay.title;
         daySquare.appendChild(eventDiv);
       }
-
+      
       daySquare.addEventListener('click', () => openModal(dayString));
     } else {
       daySquare.classList.add('padding');
@@ -107,15 +109,15 @@ function closeModal() {
   eventLocationInput.value = '';
   eventTimeInput.value = '';
   eventReminder.value = eventReminder[0].value;
-  clicked = null;
   load();
 }
 
 function saveEvent() {
+  day = clicked;
   if (eventTitleInput.value) {
      eventTitleInput.classList.remove('error');
     events.push({
-       date: clicked,
+       date:day,
       title: eventTitleInput.value,
       location: eventLocationInput.value,
       time:eventTimeInput.value ,
