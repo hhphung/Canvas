@@ -23,17 +23,28 @@ var newE = document.createElement("div");
 let day = null;
 function openModal(date) {
   clicked = date;
+  var array = [];
+ var length = events.length;
+ ggggggggggggggggggggggggg
+ for(var i = 0; i < length; i ++){
+   if(e => e.date === clicked){
+     array.push(events[i]);
+   }
+ }
+
 
   const eventForDay = events.find(e => e.date === clicked);
 
+
   if (eventForDay) {
-    var data = [];
+    const hoi = array.length;
     document.getElementById('eventText').innerText = "Title : " + eventForDay.title;
     document.getElementById('eventDate').innerText = "Date: " + eventForDay.date;
     document.getElementById('eventTime').innerText = "Time: " + eventForDay.time;
     document.getElementById('eventLocation').innerText = "Location: " + eventForDay.location;
     document.getElementById('eventRemind').innerText = "Reminder: " + eventForDay.remind;
     deleteEventModal.style.display = 'block';
+  
   } else {
     newEventModal.style.display = 'block';
   }
