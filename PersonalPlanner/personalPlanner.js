@@ -19,32 +19,67 @@ const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 
 var b ='';
 var a = '';
-var newE = document.createElement("div");
+
 let day = null;
 function openModal(date) {
   clicked = date;
-  var array = [];
+
  var length = events.length;
- ggggggggggggggggggggggggg
+ var array = [];
  for(var i = 0; i < length; i ++){
-   if(e => e.date === clicked){
+  const day = events[i].date;
+  if(day === clicked){
      array.push(events[i]);
    }
  }
 
 
   const eventForDay = events.find(e => e.date === clicked);
-
+  const hoi = array.length;
 
   if (eventForDay) {
-    const hoi = array.length;
+    for(var i = 0; i < hoi; i ++){
+    var m = array[i];
+    var space =  document.createElement("P");
+    space.innerHTML = "";
+    var temp = document.getElementById("a");
+    var newE = document.createElement("div");
+    newE.setAttribute("id", "eventBox");
+    const title = document.createElement("P");
+    title.classList.add('eventText');
+    title.innerHTML = "Title : " + m.title;
+    const date = document.createElement("P");
+    date.classList.add('eventDate');
+    date.innerHTML = "Date: " + m.date;
+    const time = document.createElement("P");
+    time.classList.add('eventTime');
+    time.innerHTML = "Time: " + m.time;
+    const location = document.createElement("P");
+    location.classList.add('eventLocation');
+    location.innerHTML = "Location: " + m.location;
+    const remind =document.createElement("P");
+    remind.classList.add('eventRemind');
+    remind.innerHTML ="Reminder: " + m.remind;
+    newE.appendChild(title);
+    newE.appendChild(date);
+    newE.appendChild(time);
+    newE.appendChild(location);
+    newE.appendChild(remind);
+    temp.appendChild(newE);
+    temp.appendChild(space);
+    }
+    deleteEventModal.style.display = 'block';
+
+
+
+    /*
     document.getElementById('eventText').innerText = "Title : " + eventForDay.title;
     document.getElementById('eventDate').innerText = "Date: " + eventForDay.date;
     document.getElementById('eventTime').innerText = "Time: " + eventForDay.time;
     document.getElementById('eventLocation').innerText = "Location: " + eventForDay.location;
     document.getElementById('eventRemind').innerText = "Reminder: " + eventForDay.remind;
-    deleteEventModal.style.display = 'block';
-  
+   
+  */
   } else {
     newEventModal.style.display = 'block';
   }
@@ -95,11 +130,23 @@ function load() {
       }
 
       if (eventForDay) {
+        var array = [];
+        var length = events.length;
+          for(var z = 0; z < length; z ++){
+           
+              if(eventForDay.date === dayString){
+                 array.push(events[z]);
+         }
+      }
         
+      var length = array.length;
+       for(var h = 0; h < length; h ++){  
+         var e = array[h];   
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event');
-        eventDiv.innerText = eventForDay.title;
+        
         daySquare.appendChild(eventDiv);
+    }
       }
       
       daySquare.addEventListener('click', () => openModal(dayString));
@@ -120,6 +167,11 @@ function closeModal() {
   eventLocationInput.value = '';
   eventTimeInput.value = '';
   eventReminder.value = eventReminder[0].value;
+  var temp = document.getElementById("a");
+  while (temp.firstChild) {
+    temp.removeChild(temp.firstChild);
+}
+
   load();
 }
 
