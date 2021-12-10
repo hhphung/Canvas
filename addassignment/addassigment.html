@@ -22,11 +22,11 @@
             margin-left: 40px;
         }
     </style>
-    <script src="addassignment.js"></script>
+    <script src="assignments.js"></script>
 </head>
 
 <body>
-    <h1 class="headers">ADD ASSIGNMENT</h1>
+    <h1 class="headers">ASSIGNMENTS</h1>
 
     <div class="assignmentBox">
         <p style=" color: #000000; position: relative; left: 23px; top: 20px; font-size: 26px"></p>
@@ -36,76 +36,91 @@
                 <th> </th>
             </tr>
             <tr>
-                <td><label for="class">Select Class:</label></td>
-                <td>
-                    <select name="class" id="class" align="right">
-                        <option value="coms327">COM S 327</option>
-                        <option value="coms319">COM S 319</option>
-                        <option value="coms311">COM S 311</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="name">Assignment Name:</label></td>
-                <td><input type="text" id="name" name="name" value=""></td>
-            </tr>
-            <tr>
-                <td><label for="type">Assignment Type:</label></td>
-                <td>
-                    <input type="radio" id="test" name="test" value="test">
-                    <label for="test">Test&nbsp;&nbsp;<span class="tab"></span><span class="tab"></span></label>
-                    <input type="radio" id="project" name="project" value="project">
-                    <label for="project">Project</label>
-                </td>
-            </tr>
-            <tr style="background-color: #FFFA9D">
+                <td id="date1"></td>
                 <td></td>
-                <td>
-                    <input type="radio" id="quiz" name="quiz" value="quiz">
-                    <label for="quiz">Quiz&nbsp;<span class="tab"></span><span class="tab"></span></label>
-                    <input type="radio" id="paper" name="paper" value="paper">
-                    <label for="paper">Paper</label>
-                </td>
             </tr>
             <tr>
+                <td id="assignment1" value =""></td>
                 <td></td>
-                <td>
-                    <input type="radio" id="worksheet" name="worksheet" value="worksheet">
-                    <label for="worksheet">Worksheet<span class="tab"></span></label>
-                    <input type="radio" id="lab" name="lab" value="lab">
-                    <label for="lab">Lab</label><br>
-                </td>
             </tr>
             <tr>
-                <td><label for="date">Due Date:</label></td>
-                <td><input type="date" id="date" name="date" value="" min="2021-08-01" max="2022-05-13"></td>
+                <td id="date2"></td>
+                <td></td>
             </tr>
             <tr>
-                <td><label for="time">Time Due:</label></td>
-                <td><input type="time" id="time" name="time" value="" min="0:00" max="24:00"></td>
+                <td id="assignment2" value =""></td>
+                <td></td>
             </tr>
             <tr>
-                <td><label for="daysneeded">Days Needed:</label></td>
-                <td><input type="number" id="daysneeded" name="daysneeded" value=""></td>
+                <td id="date3"></td>
+                <td></td>
             </tr>
             <tr>
-                <td><label for="hoursneeded">Hours Needed:</label></td>
-                <td><input type="number" id="hoursneeded" name="hoursneeded" value=""></td>
+                <td id="assignment3" value =""></td>
+                <td></td>
             </tr>
             <tr>
-                <td><label for="description">Description:</label></td>
-                <td><textarea id="description" name="description" rows="4" cols="30"></textarea></td>
+                <td id="date4"></td>
+                <td></td>
             </tr>
             <tr>
-                <td><label for="subtasks">Subtasks:</label></td>
-                <td><input type="text" id="subtasks" name="subtasks"><button type="button">+</button></td>
+                <td id="assignment4" value =""></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="date5"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="assignment5" value =""></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="date6"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="assignment6" value =""></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="date7"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="assignment7" value =""></td>
+                <td></td>
             </tr>
         </table>
     </div>
 
-    <button class="buttonHome" onclick="addassignment()" style="position:absolute; left:23px; bottom: 150px; width:9%; font-size: 20px;" id="home">Add Assignment</button>
-    <button class="buttonHome" onclick="history.back()" style="position:absolute; left:1370px; bottom: 100px; width:9%; font-size: 20px;" id="home">RETURN</button>
-    <button class="buttonHome" onclick="goHome()" style="position:absolute; left:1370px; bottom: 10px; width:9%; font-size: 20px;" id="home">HOME</button>
+    <div class="completedBox">
+        <p style=" color: #FFFA9D; position: relative; left: 23px; top: 20px; font-size: 26px">COMPLETED</p>
+    </div>
 
+        <button class="buttonHome" onclick="history.back()" style="position:absolute; left:1370px; bottom: 100px; width:9%; font-size: 20px;" id="home">RETURN</button>
+        <button class="buttonHome" onclick="goHome()" style="position:absolute; left:1370px; bottom: 10px; width:9%; font-size: 20px;" id="home">HOME</button>
+
+        <script>
+            const duedates = new Array(7);
+            var today = new Date();
+            for (i = 0; i < 7; i++) {
+                n = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
+                y = n.getFullYear();
+                m = n.getMonth() + 1;
+                d = n.getDate();
+                duedates[i] = y + "-" + m + "-" + d;
+            }
+
+            document.getElementById("date1").innerHTML = duedates[0];
+            document.getElementById("date2").innerHTML = duedates[1];
+            document.getElementById("date3").innerHTML = duedates[2];
+            document.getElementById("date4").innerHTML = duedates[3];
+            document.getElementById("date5").innerHTML = duedates[4];
+            document.getElementById("date6").innerHTML = duedates[5];
+            document.getElementById("date7").innerHTML = duedates[6];
+
+            showAssignments();
+        </script>
 </body>
 </html>
