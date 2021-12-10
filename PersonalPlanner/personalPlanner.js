@@ -133,8 +133,8 @@ function load() {
         var array = [];
         var length = events.length;
           for(var z = 0; z < length; z ++){
-           
-              if(eventForDay.date === dayString){
+            const day = events[z].date;
+              if(day === dayString){
                  array.push(events[z]);
          }
       }
