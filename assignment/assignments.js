@@ -1,59 +1,57 @@
-function test2() {
+function test2()
+{
     alert("test2");
 }
 
-
-
-function addAssignment() {
-
+function goHome()
+{
+    location.href = "./home.html";
 }
 
-function highlight(ctrl) {
-    if (ctrl.style.background == 'rgb(255, 250, 157)') {
+function showAssignments() {
+    var assignments = [];
+    assignments = JSON.parse(localStorage.getItem("AssignmentList"));
+    for (var i = 0; i < assignments.length; i++) {
+        var dat = "";
+        dat = assignments[i].date;
+        var cls = "";
+        cls = assignments[i].course;
+        var tim = "";
+        tim = assignments[i].time;
+        var tit = "";
+        tit = assignments[i].title;
+        var spot;
+        if (dat == duedates[0]) {
+            document.getElementById("assignment1").innerHTML = cls.toUpperCase() + " " + tit;
+        } else if (dat == duedates[1]) {
+            document.getElementById("assignment2").innerHTML = cls.toUpperCase() + " " + tit;
+        } else if (dat == duedates[2]) {
+            document.getElementById("assignment3").innerHTML = cls.toUpperCase() + " " + tit;
+        } else if (dat == duedates[3]) {
+            document.getElementById("assignment4").innerHTML = cls.toUpperCase() + " " + tit;
+        } else if (dat == duedates[4]) {
+            document.getElementById("assignment5").innerHTML = cls.toUpperCase() + " " + tit;
+        } else if (dat == duedates[5]) {
+            document.getElementById("assignment6").innerHTML = cls.toUpperCase() + " " + tit;
+        } else if (dat == duedates[6]) {
+            document.getElementById("assignment7").innerHTML = cls.toUpperCase() + " " + tit;
+        }
+    }
+}
+
+function highlight(ctrl)
+{
+    if (ctrl.style.background == 'rgb(255, 250, 157)')
+    {
         ctrl.style.background = 'aliceblue';
-    } else {
+    }
+    else
+    {
         ctrl.style.background = 'rgb(255, 250, 157)';
     }
 }
 
-function dates(n) {
-    today = new Date();
 
-    const weekday = new Array(7);
-    weekday[0] = "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";
-
-    const month = new Array(12);
-    month[0] = "January";
-    month[1] = "February";
-    month[2] = "March";
-    month[3] = "April";
-    month[4] = "May";
-    month[5] = "June";
-    month[6] = "July";
-    month[7] = "August";
-    month[8] = "September";
-    month[9] = "October";
-    month[10] = "November";
-    month[11] = "December";
-
-    var dayind = today.getDay() + n;
-    if (dayind <= 6) {
-        let day = weekday[dayind];
-    } else {
-        let day = weekday[dayind - 7];
-    }
-    var dd = today.getDate() + n;
-    var mm = month[today.getMonth()];
-
-
-    return (day + ',' + mm + dd);
-}
 
 
 var speak = document.getElementById("sm");
