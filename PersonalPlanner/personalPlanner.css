@@ -2,9 +2,9 @@ body {
     display: flex;
     margin-top: 50px;
     justify-content: center;
-    background: #004FF9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFF94C, #004FF9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFF94C, #004FF9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #37415e;  /* fallback for old browsers */
+   ;  /* Chrome 10-25, Safari 5.1-6 */
+     ; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   button {
     width: 75px;
@@ -27,7 +27,7 @@ body {
     left: 50px;
     width: 100px;
     height: 100px;
-    background: linear-gradient(#ffc107,#f10915);
+    background: linear-gradient(#fcbd00,#f10915);
     border-radius: 50%;
     transform: translate(-250px,-120px);
     font-size: large;
@@ -64,7 +64,7 @@ body {
   
   #header {
     padding: 10px;
-    color:rgb(32, 32, 32);
+    color:rgb(253, 251, 251);
     font-size: 26px;
     font-weight: 600;
     text-align: center;
@@ -142,7 +142,7 @@ body {
   }
   
   .day + #currentDay {
-    background-color:#FFC286;
+    background-color:#f8d1aa;
   }
 
   #eventBox{
