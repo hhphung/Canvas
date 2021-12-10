@@ -1,3 +1,4 @@
+/* CC functions */
 function goHome()
 {
     location.href = "file:///C:/Users/amand/OneDrive/Desktop/COMS319-%20wrkspce/StudentPlanner/home.html";
@@ -16,6 +17,8 @@ function highlightView(id)
     }
 }
 
+
+/* Classes for days and types of events*/
 class personalEvent
 {
     constructor(title, date, time, location, reminder)
@@ -85,20 +88,12 @@ class course
     }
 }
 
-class Event 
-{
-    constructor(tit, colo, cal) 
-    {
-        this.title = tit;
-        this.color = colo;
-        this.calendar = cal;
-    }
-}
-
 class Day 
 {
     constructor(month, day, year) 
     {
+
+        
         this.date = month + "/" + day + "/" + year;
         this.dayNum = day;
         this.monthNum = month;
@@ -127,24 +122,7 @@ class Day
     }
 }
 
-
-today = new Date();
-currentMonth = today.getMonth();
-currentYear = today.getFullYear();
-currentWeek = (today.getDate() - today.getDay());
-
-var dayVal;
-if (today.getDate() < 10)
-{
-    dayVal = "0" + today.getDate();
-}
-else
-{
-    dayVal = today.getDate();
-}
-
-//example schedule
-
+/*schedule initializer*/
 const dec08 = new Day(12,8,2021);
 const dec09 = new Day(12,9,2021);
 const dec10 = new Day(12,10,2021);
@@ -155,9 +133,13 @@ const dec14 = new Day(12,14,2021);
 
 var example = [dec08,dec09,dec10,dec11,dec12,dec13,dec14];
 
+let personalEventsLS = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
-
-var tempDayHolder = [new Day(currentMonth + 1, dayVal, currentYear)];
+/* Cal setup */
+today = new Date();
+currentMonth = today.getMonth();
+currentYear = today.getFullYear();
+currentWeek = (today.getDate() - today.getDay());
 months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 monthAndYear = document.getElementById("monthAndYear");
 showWeek(currentWeek);
@@ -237,7 +219,6 @@ function showWeek(day) {
     highlightDay(highlight);
 }
 
-// check how many days in a month code from https://dzone.com/articles/determining-number-days-month
 function daysInMonth(iMonth, iYear) 
 {
     return 32 - new Date(iYear, iMonth, 32).getDate();
@@ -245,6 +226,10 @@ function daysInMonth(iMonth, iYear)
 
 /*event stuff*/
 
+function setVars()
+{
+    readPersonalEvents();
+}
 
 function deleteEvent(toDelete, deleteID, calID) 
 {
@@ -305,56 +290,22 @@ function highlightDay(ctrl)
     }
 }
 
-function enter() 
+
+function readPersonalEvents()
 {
-    var assignment1 = new assignment("COM S 319", "Group Report 3", "Report", "12/10/2021","11:59am","3","10","Final report for group project", "None");
-    var personalEvent1 = new personalEvent("Work","12/09/2021","10:30","Mall","None")
-    dec09.addPersonalEvent(personalEvent1);
-    dec10.addAssignment(assignment1);
-    //alert(dec09.date);
-    display(dec09);
-    display(dec10);
-
-    var dayTemp = new Day(12,26,2021);
-
-    //alert("IDX: " + example.indexOf(dec09));
-
-
-    var txt = document.getElementById("date").value;
-    var year = txt.substring(0, 4);
-    var mon = txt.substring(5, 7);
-    var day = txt.substring(8, 10);
-    var color = document.getElementById("color").value;
-    var title = document.getElementById("title").value;
-    var cal = document.getElementById("calendarIn").value;
-    var highlightDay = currentMonth+1 + "/" + "0" + highlight.innerHTML + "/" + currentYear;
-
-    const dayIn = new Day(mon, day, year);
-    const eventIn = new Event(title, color, cal);
-
-    var flag = -1;
-
-    for (var i = 0; i < tempDayHolder.length; ++i) 
+    for (var i = 0; i < personalEventsLS.length; ++i)
     {
-        if (tempDayHolder[i].date == dayIn.date) 
+        const copy = personalEventsLS[i].date.split('/');
+        var temp = new Day(copy[0], copy[1], copy[2]);
+
+        var idx = inList(temp);
+        if (idx == -1)
         {
-            flag = i;
             break;
+            //add to list;
         }
-    }
-
-    if (flag == -1) 
-    {
-        dayIn.addEvent(eventIn);
-        tempDayHolder.push(dayIn);
-    }
-    else 
-    {
-        tempDayHolder[flag].addEvent(eventIn);
-    }
-    if (highlightDay == dayIn.date)
-    {
-        showEvents(dayIn);
+        const pEvent = new personalEvent(personalEventsLS[i].title, personalEventsLS[i].date, personalEventsLS[i].time, personalEventsLS[i].location, personalEventsLS[i].remind);
+        example[idx].addPersonalEvent(pEvent);
     }
 }
 
@@ -453,8 +404,6 @@ function display(day)
 
 }
 
-//assignment("COM S 319", "Group Report 3", "Report", "12/10/2021","11:59am","3","10","Final report for group project", "None");
-
 function assignDetails(day, eventidx)
 {
     var details = document.getElementById("detailstbl");
@@ -541,8 +490,6 @@ function assignDetails(day, eventidx)
     details.appendChild(subRow);
 }
 
-//("Personal Planner", "Work","12/09/2021","10:30","Mall","None")
-
 
 function personalDetails(day, eventidx)
 {
@@ -596,89 +543,4 @@ function personalDetails(day, eventidx)
     remCell.appendChild(remText);
     remRow.appendChild(remCell);
     details.appendChild(remRow);
-}
-
-
-
-
-function showEvents(date) 
-{
-    let newFlag = -1;
-
-    for (var h = 0; h < tempDayHolder.length; ++h) 
-    {
-        if (date.date == tempDayHolder[h].date) 
-        {
-            newFlag = h;
-        }
-    }
-
-    var events = document.getElementById("events-body");
-    events.innerHTML = "";
-
-
-    if (newFlag == -1 || tempDayHolder[newFlag].events.length == 0)
-    {
-        let row = document.createElement("tr");
-        let cell = document.createElement("td");
-        cell.setAttribute("class", "eventData");
-        cell.style.backgroundColor = "aliceblue";
-        cellText = document.createTextNode("No events for today!");
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-        events.appendChild(row);
-    }
-    else 
-    {
-        for (var t = 0; t <= tempDayHolder[newFlag].events.length; ++t) 
-        {
-            if (t == tempDayHolder[newFlag].events.length) 
-            {
-                break;
-            }
-            let row = document.createElement("tr");
-            let cell = document.createElement("td");
-            cell.setAttribute("class", "eventData");
-            cell.setAttribute("id", t);
-            cell.style.backgroundColor = tempDayHolder[newFlag].events[t].color;
-                        
-            let nameButton = document.createElement("button");
-            nameButton.innerHTML = tempDayHolder[newFlag].events[t].title;
-            nameButton.onclick = function () { showDetails(tempDayHolder[newFlag], cell.id) };
-            nameButton.setAttribute("class", "nameButton");
-
-            let xButton = document.createElement("button");
-            xButton.innerHTML = "X";
-            xButton.setAttribute("class", "xEvent");
-            xButton.onclick = function () { deleteEvent(tempDayHolder[newFlag], cell.id) };
-           
-            cell.appendChild(nameButton);
-            cell.appendChild(xButton);
-            row.appendChild(cell);
-            events.appendChild(row);
-        }
-
-    }
-}
-
-function showDetails(day, eventidx)
-{
-    var details = document.getElementById("detailstbl");
-    details.innerHTML = "";
-
-    let calRow = document.createElement("tr");
-    let calCell = document.createElement("td");
-    calCell.setAttribute("class", "detailsData");
-    calText = document.createTextNode("Calendar: " + day.events[eventidx].calendar);
-    calCell.appendChild(calText);
-    calRow.appendChild(calCell);
-    details.appendChild(calRow);
-
-    let titleRow = document.createElement("tr");
-    let titleCell = document.createElement("td");
-    titleCell.setAttribute("class", "detailsData");
-    titleText = document.createTextNode("Title: " + day.events[eventidx].title);
-    titleCell.appendChild(titleText);
-    titleRow.appendChild(titleCell);
-    details.appendChild(titleRow);
 }
